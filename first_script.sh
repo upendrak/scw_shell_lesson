@@ -1,3 +1,4 @@
+# Help function
 if [ "$1" == "-h"] || [ "$1" == "--help"]; then
    echo "Usage: sh $0 input_file output_file"
    exit
