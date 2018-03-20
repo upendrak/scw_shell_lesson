@@ -1,0 +1,31 @@
+---
+title: "test_script"
+author: "Upendra Devisetty"
+date: "March 20, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Dataset
+
+```{r}
+gap5 <- read.csv("data/gapminder-FiveYearData.csv") 
+head(gap5)
+dim(gap5)
+summary(gap5)
+str(gap5)
+```
+
+## Including Plots
+
+```{r echo=FALSE}
+library(ggplot2)
+
+ggplot(gap5, aes(year, lifeExp)) + 
+    geom_point() + 
+    geom_smooth(position = "identity", se = FALSE, method = "lm", color = "blue", lwd = 2) +
+    facet_wrap( ~ continent)
+```
+
