@@ -1,0 +1,6 @@
+rm(list = ls())
+gap5 <- read.csv("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv") 
+head(gap5)
+dim(gap5)
+summary(gap5)
+str(gap5)
