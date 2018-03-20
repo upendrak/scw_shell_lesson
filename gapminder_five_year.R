@@ -1,6 +1,15 @@
 rm(list = ls())
-gap5 <- read.csv("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv") 
+gap5 <- read.csv("data/gapminder-FiveYearData.csv") 
 head(gap5)
 dim(gap5)
 summary(gap5)
 str(gap5)
+
+#ggplots
+library(ggplot2)
+
+ggplot(gap5, aes(year, lifeExp)) + 
+    geom_point() + 
+    geom_smooth(position = "identity", se = FALSE, method = "lm", color = "blue", lwd = 2) +
+    facet_wrap( ~ continent)
+
